@@ -1,0 +1,96 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\Hana\\Desktop\\school\\ing\\pokrocile_prog\\godot_snake\\snake_godot.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\Hana\\Desktop\\school\\ing\\pokrocile_prog\\godot_snake\\snake_godot.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Hana\\Desktop\\school\\ing\\pokrocile_prog\\godot_snake\\snake_godot.csproj",
+        "projectName": "snake_godot",
+        "projectPath": "C:\\Users\\Hana\\Desktop\\school\\ing\\pokrocile_prog\\godot_snake\\snake_godot.csproj",
+        "packagesPath": "C:\\Users\\Hana\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Hana\\Desktop\\school\\ing\\pokrocile_prog\\godot_snake\\.godot\\mono\\temp\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Hana\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Godot.SourceGenerators": {
+              "target": "Package",
+              "version": "[4.2.2, )"
+            },
+            "GodotSharp": {
+              "target": "Package",
+              "version": "[4.2.2, )"
+            },
+            "GodotSharpEditor": {
+              "target": "Package",
+              "version": "[4.2.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[6.0.29, 6.0.29]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[6.0.29, 6.0.29]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[6.0.29, 6.0.29]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
