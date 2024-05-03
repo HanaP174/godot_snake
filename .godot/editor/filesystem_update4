@@ -1,2 +1,3 @@
-res://playground/playground.gd
-res://playground/playground.tscn
+res://playground/Head.cs
+res://playground/playground.cs
+res://playground/SnakePart.cs

@@ -1,5 +1,6 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1714594397
+::res://::1714760555
+global.json::JSON::-1::1714594983::0::1::::<><>::
 icon.svg::CompressedTexture2D::1229121897545774961::1714590200::1714590214::1::::<><>::
 ::res://addons/::1714591879
 ::res://addons/godot-git-plugin/::1714591880
@@ -8,6 +9,11 @@ plugin.cfg::TextFile::-1::1714591879::0::1::::<><>::
 THIRDPARTY.md::TextFile::-1::1714591879::0::1::::<><>::
 ::res://addons/godot-git-plugin/linux/::1714591879
 ::res://addons/godot-git-plugin/macos/::1714591880
-::res://addons/godot-git-plugin/win64/::1714594391
-::res://playground/::1714592499
-playground.tscn::PackedScene::4617572722976916169::1714592499::0::1::::<><>::
+::res://addons/godot-git-plugin/win64/::1714760548
+::res://playground/::1714760079
+Head.cs::CSharpScript::-1::1714759149::0::1::::<>Area2D<>::
+Head.tscn::PackedScene::3245138565218472468::1714760079::0::1::::<><>::res://playground/Head.cs<>uid://bjdvdjgj05a4s::::res://playground/sprites/head.png
+playground.cs::CSharpScript::-1::1714759332::0::1::::<>Node2D<>::
+playground.tscn::PackedScene::4617572722976916169::1714759412::0::1::::<><>::res://playground/playground.cs<>uid://bmh77trewptmy::::res://playground/Head.tscn<>res://playground/Head.cs
+::res://playground/sprites/::1714678572
+head.png::CompressedTexture2D::3025594306349867404::1714678341::1714678572::1::::<><>::
