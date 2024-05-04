@@ -5,3 +5,6 @@ res://playground/Boundary.cs
 res://playground/playground.tscn
 res://playground/Head.tscn
 res://playground/Wall.cs
+res://playground/GameOver.tscn
+res://playground/GameOverScreen.cs
+res://playground/GameOverScreen.tscn

@@ -12,27 +12,20 @@ public partial class playground : Node2D
 	
 	private Vector2 _movement = Vector2.Right;
 	private Head _head;
+	private GameOverScreen _gameOverScreen;
 	
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-		StartGame();
+		Init();
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
-		HandleMovement();
-		_lastMoveTime += delta * TimeBetweenMovements;
-		if (_lastMoveTime >= TimeBetweenMovements)
-		{
-			UpdateSnake();
-			_lastMoveTime = 0;
-		}
-	}
+		CheckGameOver();
 
-	public override void _PhysicsProcess(double delta)
-	{
+		HandleMovement();
 		_lastMoveTime += delta * _speed;
 		if (_lastMoveTime >= TimeBetweenMovements)
 		{
@@ -41,18 +34,12 @@ public partial class playground : Node2D
 		}
 	}
 
-	private void StartGame()
-	{
-		Init();
-		// GameLoop();
-		// GameOver();
-	}
-
 	private void Init()
 	{
 		_score = 5;
 		_gameOver = false;
 		_head = GetNode<Head>("./Head");
+		_gameOverScreen = GetNode<GameOverScreen>("./GameOverScreen");
 		// _random = new Random();
 		// _snake = new Snake(new Pixel(Width / 2, Height / 2, ConsoleColor.Red), new List<Pixel>());
 		// _treat = new Pixel(_random.Next(0, Width), _random.Next(0, Height),
@@ -84,5 +71,10 @@ public partial class playground : Node2D
 	{
 		_head.Move(_movement * GridSize);
 		_gameOver = _head.WallCollision;
+	}
+
+	private void CheckGameOver()
+	{
+		if (_gameOver) _gameOverScreen.Visible = true;
 	}
 }

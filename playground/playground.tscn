@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://b6110o21qj0in"]
+[gd_scene load_steps=8 format=3 uid="uid://b6110o21qj0in"]
 
 [ext_resource type="Script" path="res://playground/playground.cs" id="1_2ucuq"]
 [ext_resource type="PackedScene" uid="uid://bmh77trewptmy" path="res://playground/Head.tscn" id="2_brgtm"]
 [ext_resource type="Script" path="res://playground/Wall.cs" id="3_3jx3k"]
 [ext_resource type="Texture2D" uid="uid://v70nfq5cgngy" path="res://playground/sprites/wall.png" id="3_jmgvs"]
+[ext_resource type="PackedScene" uid="uid://qcakosac1rck" path="res://playground/GameOverScreen.tscn" id="5_ptenv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eu804"]
 size = Vector2(1153, 27)
@@ -72,5 +73,8 @@ texture = ExtResource("3_jmgvs")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/WallRight"]
 position = Vector2(573.25, 24.25)
 shape = SubResource("RectangleShape2D_j1md4")
+
+[node name="GameOverScreen" parent="." instance=ExtResource("5_ptenv")]
+visible = false
 
 [connection signal="body_entered" from="Head" to="Head" method="OnBodyEntered"]
