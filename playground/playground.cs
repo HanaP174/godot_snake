@@ -51,9 +51,7 @@ public partial class playground : Node2D
 	private void Init()
 	{
 		_score = 5;
-		// _buttonPressed = false;
 		_gameOver = false;
-		// _head = new Head();
 		_head = GetNode<Head>("./Head");
 		// _random = new Random();
 		// _snake = new Snake(new Pixel(Width / 2, Height / 2, ConsoleColor.Red), new List<Pixel>());
@@ -85,5 +83,6 @@ public partial class playground : Node2D
 	private void UpdateSnake()
 	{
 		_head.Move(_movement * GridSize);
+		_gameOver = _head.WallCollision;
 	}
 }

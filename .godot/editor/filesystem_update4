@@ -1,3 +1,7 @@
 res://playground/Head.cs
 res://playground/playground.cs
 res://playground/SnakePart.cs
+res://playground/Boundary.cs
+res://playground/playground.tscn
+res://playground/Head.tscn
+res://playground/Wall.cs
