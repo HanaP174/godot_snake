@@ -1,10 +1,12 @@
-[gd_scene load_steps=8 format=3 uid="uid://b6110o21qj0in"]
+[gd_scene load_steps=10 format=3 uid="uid://b6110o21qj0in"]
 
 [ext_resource type="Script" path="res://playground/playground.cs" id="1_2ucuq"]
 [ext_resource type="PackedScene" uid="uid://bmh77trewptmy" path="res://playground/Head.tscn" id="2_brgtm"]
 [ext_resource type="Script" path="res://playground/Wall.cs" id="3_3jx3k"]
 [ext_resource type="Texture2D" uid="uid://v70nfq5cgngy" path="res://playground/sprites/wall.png" id="3_jmgvs"]
 [ext_resource type="PackedScene" uid="uid://qcakosac1rck" path="res://playground/GameOverScreen.tscn" id="5_ptenv"]
+[ext_resource type="Script" path="res://playground/Bounds.cs" id="6_ptncp"]
+[ext_resource type="Script" path="res://playground/Spawner.cs" id="7_6xiv0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eu804"]
 size = Vector2(1153, 27)
@@ -76,5 +78,18 @@ shape = SubResource("RectangleShape2D_j1md4")
 
 [node name="GameOverScreen" parent="." instance=ExtResource("5_ptenv")]
 visible = false
+
+[node name="Bounds" type="Node2D" parent="."]
+script = ExtResource("6_ptncp")
+
+[node name="TopLeft" type="Marker2D" parent="Bounds"]
+position = Vector2(-529, -271)
+
+[node name="BottomRight" type="Marker2D" parent="Bounds"]
+position = Vector2(557, 321)
+
+[node name="Spawner" type="Node2D" parent="." node_paths=PackedStringArray("bounds")]
+script = ExtResource("7_6xiv0")
+bounds = NodePath("../Bounds")
 
 [connection signal="body_entered" from="Head" to="Head" method="OnBodyEntered"]

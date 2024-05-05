@@ -13,11 +13,13 @@ public partial class playground : Node2D
 	private Vector2 _movement = Vector2.Right;
 	private Head _head;
 	private GameOverScreen _gameOverScreen;
+	private Spawner _spawner;
 	
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
 		Init();
+		_spawner.SpawnTreat();
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -40,9 +42,8 @@ public partial class playground : Node2D
 		_gameOver = false;
 		_head = GetNode<Head>("./Head");
 		_gameOverScreen = GetNode<GameOverScreen>("./GameOverScreen");
-		// _random = new Random();
+		_spawner = GetNode<Spawner>("./Spawner");
 		// _snake = new Snake(new Pixel(Width / 2, Height / 2, ConsoleColor.Red), new List<Pixel>());
-		// _treat = new Pixel(_random.Next(0, Width), _random.Next(0, Height),
 		// 	ConsoleColor.Cyan);
 	}
 

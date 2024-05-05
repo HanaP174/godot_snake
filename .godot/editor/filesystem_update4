@@ -8,3 +8,7 @@ res://playground/Wall.cs
 res://playground/GameOver.tscn
 res://playground/GameOverScreen.cs
 res://playground/GameOverScreen.tscn
+res://playground/Bounds.cs
+res://playground/Spawner.cs
+res://playground/Treat.cs
+res://playground/Treat.tscn
