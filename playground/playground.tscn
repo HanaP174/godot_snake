@@ -79,17 +79,18 @@ shape = SubResource("RectangleShape2D_j1md4")
 [node name="GameOverScreen" parent="." instance=ExtResource("5_ptenv")]
 visible = false
 
-[node name="Bounds" type="Node2D" parent="."]
-script = ExtResource("6_ptncp")
-
-[node name="TopLeft" type="Marker2D" parent="Bounds"]
-position = Vector2(-529, -271)
-
-[node name="BottomRight" type="Marker2D" parent="Bounds"]
-position = Vector2(557, 321)
-
 [node name="Spawner" type="Node2D" parent="." node_paths=PackedStringArray("bounds")]
 script = ExtResource("7_6xiv0")
 bounds = NodePath("../Bounds")
 
-[connection signal="body_entered" from="Head" to="Head" method="OnBodyEntered"]
+[node name="Bounds" type="Node2D" parent="."]
+script = ExtResource("6_ptncp")
+
+[node name="TopLeft" type="Marker2D" parent="Bounds"]
+position = Vector2(-531, -271)
+scale = Vector2(-39304.8, 555.893)
+
+[node name="BottomRight" type="Marker2D" parent="Bounds"]
+position = Vector2(559, 321)
+
+[connection signal="area_entered" from="Head" to="Head" method="OnAreaEntered"]

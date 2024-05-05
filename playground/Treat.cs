@@ -12,4 +12,9 @@ public partial class Treat : Area2D
 	public override void _Process(double delta)
 	{
 	}
+
+	public void Eaten()
+	{
+		QueueFree();
+	}
 }

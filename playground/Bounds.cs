@@ -1,5 +1,4 @@
 using Godot;
-using System;
 
 public partial class Bounds : Node2D
 {
@@ -28,6 +27,4 @@ public partial class Bounds : Node2D
 	public override void _Process(double delta)
 	{
 	}
-	
-	
 }

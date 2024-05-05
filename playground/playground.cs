@@ -43,8 +43,6 @@ public partial class playground : Node2D
 		_head = GetNode<Head>("./Head");
 		_gameOverScreen = GetNode<GameOverScreen>("./GameOverScreen");
 		_spawner = GetNode<Spawner>("./Spawner");
-		// _snake = new Snake(new Pixel(Width / 2, Height / 2, ConsoleColor.Red), new List<Pixel>());
-		// 	ConsoleColor.Cyan);
 	}
 
 

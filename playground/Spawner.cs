@@ -12,7 +12,6 @@ public partial class Spawner : Node2D
 	public override void _Ready()
 	{
 		_treatScene = ResourceLoader.Load<PackedScene>("res://playground/Treat.tscn");
-		;
 		_random = new Random();
 	}
 
