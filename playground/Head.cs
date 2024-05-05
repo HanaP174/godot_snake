@@ -3,15 +3,15 @@ using Godot;
 
 public partial class Head : SnakePart
 {
-	// [Signal]
-	// public 
+	[Signal]
+	public delegate void TreatEatenEventHandler();
+
 	public bool WallCollision = false;
-	// Called when the node enters the scene tree for the first time.
+
 	public override void _Ready()
 	{
 	}
 
-	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
 	}
@@ -25,6 +25,7 @@ public partial class Head : SnakePart
 	{
 		if (area.HasMethod("Eaten"))
 		{
+			EmitSignal(SignalName.TreatEaten);
 			area.Call("Eaten");
 		}
 	}

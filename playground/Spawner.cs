@@ -18,10 +18,13 @@ public partial class Spawner : Node2D
 	public void SpawnTreat()
 	{
 		Vector2 treatPosition = Vector2.Zero;
-		treatPosition.X = _random.Next((int) bounds.XMin + 60, (int) bounds.XMax - 60);
-		treatPosition.Y = _random.Next((int) bounds.YMin + 60, (int) bounds.YMax - 60);
-		Area2D treat = _treatScene.Instantiate() as Area2D;
-		treat.Position = treatPosition;
-		GetParent().AddChild(treat);
+		treatPosition.X = _random.Next((int) bounds.XMin + 80, (int) bounds.XMax - 80);
+		treatPosition.Y = _random.Next((int) bounds.YMin + 80, (int) bounds.YMax - 80);
+		if (_treatScene.Instantiate() is Area2D treat)
+		{
+			treat.Position = treatPosition;
+			GetParent().AddChild(treat);
+
+		}
 	}
 }

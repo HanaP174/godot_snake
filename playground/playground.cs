@@ -15,14 +15,12 @@ public partial class playground : Node2D
 	private GameOverScreen _gameOverScreen;
 	private Spawner _spawner;
 	
-	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
 		Init();
 		_spawner.SpawnTreat();
 	}
 
-	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
 		CheckGameOver();
@@ -43,6 +41,7 @@ public partial class playground : Node2D
 		_head = GetNode<Head>("./Head");
 		_gameOverScreen = GetNode<GameOverScreen>("./GameOverScreen");
 		_spawner = GetNode<Spawner>("./Spawner");
+		_head.TreatEaten += TreatEaten;
 	}
 
 
@@ -75,5 +74,10 @@ public partial class playground : Node2D
 	private void CheckGameOver()
 	{
 		if (_gameOver) _gameOverScreen.Visible = true;
+	}
+
+	private void TreatEaten()
+	{
+		_spawner.CallDeferred("SpawnTreat");
 	}
 }

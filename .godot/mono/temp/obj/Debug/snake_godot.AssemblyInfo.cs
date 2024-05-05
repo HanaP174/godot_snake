@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("snake_godot")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+473d99b11abc47d3f50a3907d0290737235e74ab")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7694626274775b60bb6647087ffe3b7661591949")]
 [assembly: System.Reflection.AssemblyProductAttribute("snake_godot")]
 [assembly: System.Reflection.AssemblyTitleAttribute("snake_godot")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
