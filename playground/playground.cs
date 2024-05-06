@@ -1,19 +1,21 @@
-using System;
+using System.Collections.Generic;
 using Godot;
+using Godot.Collections;
+using Array = System.Array;
 
 public partial class playground : Node2D
 {
 	private int _score;
-	private bool _gameOver;
-	private double _speed = 2000.0;
+	private double _speed = 3000.0;
 	private double _lastMoveTime = 1000.0;
 	private const double TimeBetweenMovements = 1000.0;
-	private const float GridSize = 22;
+	private const float GridSize = 32;
 	
 	private Vector2 _movement = Vector2.Right;
 	private Head _head;
 	private GameOverScreen _gameOverScreen;
 	private Spawner _spawner;
+	private Array<SnakePart> _snakeBody = new Array<SnakePart>();
 	
 	public override void _Ready()
 	{
@@ -23,8 +25,6 @@ public partial class playground : Node2D
 
 	public override void _Process(double delta)
 	{
-		CheckGameOver();
-
 		HandleMovement();
 		_lastMoveTime += delta * _speed;
 		if (_lastMoveTime >= TimeBetweenMovements)
@@ -37,11 +37,15 @@ public partial class playground : Node2D
 	private void Init()
 	{
 		_score = 5;
-		_gameOver = false;
 		_head = GetNode<Head>("./Head");
 		_gameOverScreen = GetNode<GameOverScreen>("./GameOverScreen");
 		_spawner = GetNode<Spawner>("./Spawner");
+		
 		_head.TreatEaten += TreatEaten;
+		_spawner.BodyAdded += AddSnakeBody;
+		_head.Collision += CheckGameOver;
+		
+		_snakeBody.Add(_head);
 	}
 
 
@@ -67,17 +71,28 @@ public partial class playground : Node2D
 
 	private void UpdateSnake()
 	{
-		_head.Move(_movement * GridSize);
-		_gameOver = _head.WallCollision;
+		_head.Move(_head.Position + _movement * GridSize);
+		for (int i = 1; i < _snakeBody.Count; i++)
+		{
+			Vector2 previousPosition = _snakeBody[i - 1].LastPosition;
+			_snakeBody[i].Move(previousPosition);
+		}
 	}
 
 	private void CheckGameOver()
 	{
-		if (_gameOver) _gameOverScreen.Visible = true;
+		_gameOverScreen.Visible = true;
 	}
 
 	private void TreatEaten()
 	{
 		_spawner.CallDeferred("SpawnTreat");
+		_score++;
+		_spawner.CallDeferred("SpawnSnakeBody", _snakeBody[^1].LastPosition);
+	}
+
+	private void AddSnakeBody(Body snakePart)
+	{
+		_snakeBody.Add(snakePart);
 	}
 }

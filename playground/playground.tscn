@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://b6110o21qj0in"]
+[gd_scene load_steps=13 format=3 uid="uid://b6110o21qj0in"]
 
 [ext_resource type="Script" path="res://playground/playground.cs" id="1_2ucuq"]
 [ext_resource type="PackedScene" uid="uid://bmh77trewptmy" path="res://playground/Head.tscn" id="2_brgtm"]
@@ -7,18 +7,37 @@
 [ext_resource type="PackedScene" uid="uid://qcakosac1rck" path="res://playground/GameOverScreen.tscn" id="5_ptenv"]
 [ext_resource type="Script" path="res://playground/Bounds.cs" id="6_ptncp"]
 [ext_resource type="Script" path="res://playground/Spawner.cs" id="7_6xiv0"]
+[ext_resource type="Texture2D" uid="uid://boydgfrbbmc2u" path="res://playground/sprites/grid.PNG" id="8_yg4bi"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yl4sx"]
+texture = ExtResource("8_yg4bi")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_olwdv"]
+tile_size = Vector2i(32, 32)
+sources/1 = SubResource("TileSetAtlasSource_yl4sx")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eu804"]
-size = Vector2(1153, 27)
+size = Vector2(774.375, 29.875)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j1md4"]
-size = Vector2(33, 593.5)
+size = Vector2(33, 448)
 
 [node name="Playground" type="Node2D"]
 position = Vector2(563, 298)
 script = ExtResource("1_2ucuq")
 
+[node name="Grid" type="TileMap" parent="."]
+position = Vector2(13, 22)
+tile_set = SubResource("TileSet_olwdv")
+rendering_quadrant_size = 32
+format = 2
+layer_0/tile_data = PackedInt32Array(-524305, 1, 0, -458769, 1, 0, -393233, 1, 0, -327697, 1, 0, -262161, 1, 0, -196625, 1, 0, -131089, 1, 0, -65553, 1, 0, -17, 1, 0, 65519, 1, 0, 131055, 1, 0, 196591, 1, 0, -524304, 1, 0, -458768, 1, 0, -393232, 1, 0, -327696, 1, 0, -262160, 1, 0, -196624, 1, 0, -131088, 1, 0, -65552, 1, 0, -16, 1, 0, 65520, 1, 0, 131056, 1, 0, 196592, 1, 0, -524303, 1, 0, -458767, 1, 0, -393231, 1, 0, -327695, 1, 0, -262159, 1, 0, -196623, 1, 0, -131087, 1, 0, -65551, 1, 0, -15, 1, 0, 65521, 1, 0, 131057, 1, 0, 196593, 1, 0, -524302, 1, 0, -458766, 1, 0, -393230, 1, 0, -327694, 1, 0, -262158, 1, 0, -196622, 1, 0, -131086, 1, 0, -65550, 1, 0, -14, 1, 0, 65522, 1, 0, 131058, 1, 0, 196594, 1, 0, -524301, 1, 0, -458765, 1, 0, -393229, 1, 0, -327693, 1, 0, -262157, 1, 0, -196621, 1, 0, -131085, 1, 0, -65549, 1, 0, -13, 1, 0, 65523, 1, 0, 131059, 1, 0, 196595, 1, 0, -524300, 1, 0, -458764, 1, 0, -393228, 1, 0, -327692, 1, 0, -262156, 1, 0, -196620, 1, 0, -131084, 1, 0, -65548, 1, 0, -12, 1, 0, 65524, 1, 0, 131060, 1, 0, 196596, 1, 0, -524299, 1, 0, -458763, 1, 0, -393227, 1, 0, -327691, 1, 0, -262155, 1, 0, -196619, 1, 0, -131083, 1, 0, -65547, 1, 0, -11, 1, 0, 65525, 1, 0, 131061, 1, 0, 196597, 1, 0, -524298, 1, 0, -458762, 1, 0, -393226, 1, 0, -327690, 1, 0, -262154, 1, 0, -196618, 1, 0, -131082, 1, 0, -65546, 1, 0, -10, 1, 0, 65526, 1, 0, 131062, 1, 0, 196598, 1, 0, -524297, 1, 0, -458761, 1, 0, -393225, 1, 0, -327689, 1, 0, -262153, 1, 0, -196617, 1, 0, -131081, 1, 0, -65545, 1, 0, -9, 1, 0, 65527, 1, 0, 131063, 1, 0, 196599, 1, 0, -524296, 1, 0, -458760, 1, 0, -393224, 1, 0, -327688, 1, 0, -262152, 1, 0, -196616, 1, 0, -131080, 1, 0, -65544, 1, 0, -8, 1, 0, 65528, 1, 0, 131064, 1, 0, 196600, 1, 0, -524295, 1, 0, -458759, 1, 0, -393223, 1, 0, -327687, 1, 0, -262151, 1, 0, -196615, 1, 0, -131079, 1, 0, -65543, 1, 0, -7, 1, 0, 65529, 1, 0, 131065, 1, 0, 196601, 1, 0, -524294, 1, 0, -458758, 1, 0, -393222, 1, 0, -327686, 1, 0, -262150, 1, 0, -196614, 1, 0, -131078, 1, 0, -65542, 1, 0, -6, 1, 0, 65530, 1, 0, 131066, 1, 0, 196602, 1, 0, -524293, 1, 0, -458757, 1, 0, -393221, 1, 0, -327685, 1, 0, -262149, 1, 0, -196613, 1, 0, -131077, 1, 0, -65541, 1, 0, -5, 1, 0, 65531, 1, 0, 131067, 1, 0, 196603, 1, 0, -524292, 1, 0, -458756, 1, 0, -393220, 1, 0, -327684, 1, 0, -262148, 1, 0, -196612, 1, 0, -131076, 1, 0, -65540, 1, 0, -4, 1, 0, 65532, 1, 0, 131068, 1, 0, 196604, 1, 0, -524291, 1, 0, -458755, 1, 0, -393219, 1, 0, -327683, 1, 0, -262147, 1, 0, -196611, 1, 0, -131075, 1, 0, -65539, 1, 0, -3, 1, 0, 65533, 1, 0, 131069, 1, 0, 196605, 1, 0, -524290, 1, 0, -458754, 1, 0, -393218, 1, 0, -327682, 1, 0, -262146, 1, 0, -196610, 1, 0, -131074, 1, 0, -65538, 1, 0, -2, 1, 0, 65534, 1, 0, 131070, 1, 0, 196606, 1, 0, -524289, 1, 0, -458753, 1, 0, -393217, 1, 0, -327681, 1, 0, -262145, 1, 0, -196609, 1, 0, -131073, 1, 0, -65537, 1, 0, -1, 1, 0, 65535, 1, 0, 131071, 1, 0, 196607, 1, 0, -589824, 1, 0, -524288, 1, 0, -458752, 1, 0, -393216, 1, 0, -327680, 1, 0, -262144, 1, 0, -196608, 1, 0, -131072, 1, 0, -65536, 1, 0, 0, 1, 0, 65536, 1, 0, 131072, 1, 0, -589823, 1, 0, -524287, 1, 0, -458751, 1, 0, -393215, 1, 0, -327679, 1, 0, -262143, 1, 0, -196607, 1, 0, -131071, 1, 0, -65535, 1, 0, 1, 1, 0, 65537, 1, 0, 131073, 1, 0, -589822, 1, 0, -524286, 1, 0, -458750, 1, 0, -393214, 1, 0, -327678, 1, 0, -262142, 1, 0, -196606, 1, 0, -131070, 1, 0, -65534, 1, 0, 2, 1, 0, 65538, 1, 0, 131074, 1, 0, -589821, 1, 0, -524285, 1, 0, -458749, 1, 0, -393213, 1, 0, -327677, 1, 0, -262141, 1, 0, -196605, 1, 0, -131069, 1, 0, -65533, 1, 0, 3, 1, 0, 65539, 1, 0, 131075, 1, 0, -589820, 1, 0, -524284, 1, 0, -458748, 1, 0, -393212, 1, 0, -327676, 1, 0, -262140, 1, 0, -196604, 1, 0, -131068, 1, 0, -65532, 1, 0, 4, 1, 0, 65540, 1, 0, 131076, 1, 0, -589819, 1, 0, -524283, 1, 0, -458747, 1, 0, -393211, 1, 0, -327675, 1, 0, -262139, 1, 0, -196603, 1, 0, -131067, 1, 0, -65531, 1, 0, 5, 1, 0, 65541, 1, 0, 131077, 1, 0)
+
 [node name="Head" parent="." instance=ExtResource("2_brgtm")]
+position = Vector2(-291, -59)
+scale = Vector2(0.680004, 0.479996)
 
 [node name="Walls" type="Node2D" parent="."]
 
@@ -28,26 +47,26 @@ script = ExtResource("3_3jx3k")
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Walls/WallTop"]
-position = Vector2(349.25, -259.238)
-scale = Vector2(0.30039, 0.0131843)
+position = Vector2(178.5, -257.238)
+scale = Vector2(0.198698, 0.0150356)
 texture = ExtResource("3_jmgvs")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/WallTop"]
-position = Vector2(349.5, -259.499)
+position = Vector2(182, -259.08)
+scale = Vector2(1, 1.28)
 shape = SubResource("RectangleShape2D_eu804")
 
 [node name="WallBottom" type="StaticBody2D" parent="Walls"]
-position = Vector2(-670, -50)
+position = Vector2(-815, -248)
 script = ExtResource("3_3jx3k")
-metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Walls/WallBottom"]
-position = Vector2(683.625, 384.88)
-scale = Vector2(0.300325, 0.0130736)
+position = Vector2(657.5, 382.5)
+scale = Vector2(0.205469, 0.0152775)
 texture = ExtResource("3_jmgvs")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/WallBottom"]
-position = Vector2(684, 385)
+position = Vector2(663.813, 380.938)
 shape = SubResource("RectangleShape2D_eu804")
 
 [node name="WallLeft" type="StaticBody2D" parent="Walls"]
@@ -55,42 +74,46 @@ script = ExtResource("3_3jx3k")
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Walls/WallLeft"]
-position = Vector2(-547.25, 25)
-scale = Vector2(0.00794272, 0.297222)
+position = Vector2(-547.25, -73.5002)
+scale = Vector2(0.00794272, 0.20787)
 texture = ExtResource("3_jmgvs")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/WallLeft"]
-position = Vector2(-546.5, 24.25)
+position = Vector2(-547, -61)
 shape = SubResource("RectangleShape2D_j1md4")
 
 [node name="WallRight" type="StaticBody2D" parent="Walls"]
+position = Vector2(-353, -15)
 script = ExtResource("3_3jx3k")
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Walls/WallRight"]
-position = Vector2(575.25, 30)
-scale = Vector2(0.00794272, 0.290741)
+position = Vector2(575.25, -60.0001)
+scale = Vector2(0.00794272, 0.207408)
 texture = ExtResource("3_jmgvs")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/WallRight"]
-position = Vector2(573.25, 24.25)
+position = Vector2(573.25, -60)
 shape = SubResource("RectangleShape2D_j1md4")
 
 [node name="GameOverScreen" parent="." instance=ExtResource("5_ptenv")]
 visible = false
 
-[node name="Spawner" type="Node2D" parent="." node_paths=PackedStringArray("bounds")]
+[node name="Spawner" type="Node2D" parent="." node_paths=PackedStringArray("_bounds")]
 script = ExtResource("7_6xiv0")
-bounds = NodePath("../Bounds")
+_bounds = NodePath("../Bounds")
 
 [node name="Bounds" type="Node2D" parent="."]
 script = ExtResource("6_ptncp")
 
 [node name="TopLeft" type="Marker2D" parent="Bounds"]
-position = Vector2(-531, -271)
+position = Vector2(-529, -265)
 scale = Vector2(-39304.8, 555.893)
 
 [node name="BottomRight" type="Marker2D" parent="Bounds"]
-position = Vector2(559, 321)
+position = Vector2(204, 118)
+rotation = 3.13714
+scale = Vector2(1e-05, 1e-05)
 
 [connection signal="area_entered" from="Head" to="Head" method="OnAreaEntered"]
+[connection signal="body_entered" from="Head" to="Head" method="OnBodyEntered"]

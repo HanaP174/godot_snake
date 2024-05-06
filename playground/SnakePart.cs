@@ -3,11 +3,11 @@ using System;
 
 public partial class SnakePart : Area2D
 {
-	private Vector2 lastPosition;
+	public Vector2 LastPosition;
 
 	public void Move(Vector2 newPosition)
 	{
-		Position += newPosition;
-		lastPosition = Position;
+		LastPosition = Position;
+		Position = newPosition;
 	}
 }

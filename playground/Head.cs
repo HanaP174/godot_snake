@@ -6,7 +6,8 @@ public partial class Head : SnakePart
 	[Signal]
 	public delegate void TreatEatenEventHandler();
 
-	public bool WallCollision = false;
+	[Signal]
+	public delegate void CollisionEventHandler();
 
 	public override void _Ready()
 	{
@@ -18,15 +19,19 @@ public partial class Head : SnakePart
 
 	public void OnBodyEntered(Node2D body)
 	{
-		WallCollision = true;
+		EmitSignal(SignalName.Collision);
 	}
 
 	public void OnAreaEntered(Area2D area)
 	{
 		if (area.HasMethod("Eaten"))
 		{
-			EmitSignal(SignalName.TreatEaten);
 			area.Call("Eaten");
+			EmitSignal(SignalName.TreatEaten);
+		}
+		if (area.HasMethod("HitBody"))
+		{
+			EmitSignal(SignalName.Collision);
 		}
 	}
 }

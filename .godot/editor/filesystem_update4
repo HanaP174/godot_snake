@@ -1,5 +1,5 @@
+res://playground/GameOverScreen.tscn
 res://playground/playground.tscn
-res://playground/Head.tscn
 res://playground/Treat.tscn
 res://playground/GameOverScreen.cs
 res://playground/Wall.cs
@@ -9,3 +9,6 @@ res://playground/Head.cs
 res://playground/Treat.cs
 res://playground/Bounds.cs
 res://playground/playground.cs
+res://playground/Head.tscn
+res://playground/Body.cs
+res://playground/Body.tscn
