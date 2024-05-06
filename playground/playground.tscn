@@ -37,6 +37,7 @@ layer_0/tile_data = PackedInt32Array(-524305, 1, 0, -458769, 1, 0, -393233, 1, 0
 
 [node name="Head" parent="." instance=ExtResource("2_brgtm")]
 position = Vector2(-291, -59)
+rotation = -1.5708
 scale = Vector2(0.680004, 0.479996)
 
 [node name="Walls" type="Node2D" parent="."]
